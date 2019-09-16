@@ -1,0 +1,27 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+Resultados
+{% endblock title %}
+
+{% block content %}
+<h1>Su solicitud ha sido ingresada con éxito</h1>
+<br>
+<h2> tipo de servicio: </h2>
+
+  <h3>{{tipo}}</h3>
+
+<h2> Lugar: </h2>
+
+  <h3>{{com}}, {{direc}}</h3>
+
+<h2> Fecha: </h2>
+
+  <h3>{{fecha}}</h3>
+ 
+ <h2> Email y teléfono de contacto:</h2>
+  <h3> {{mail}}, {{fono}}</h3>
+
+ <h2> Descripción: </h2>
+  <h3>{{des}}</h3>
+{% endblock content %}

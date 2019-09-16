@@ -1,0 +1,65 @@
+
+{% extends 'navbar.html' %}
+
+{% block title %}
+Solicitud
+{% endblock title %}
+
+{% block content %}
+
+<div id="descripcion" class="container">
+    <h1>Solicitud de servicio</h1>
+
+<!-- En este segmento debemos indicarle al formulario qué hacer cuando se hace clic en el botón submit -->
+    <form action="/resol" method="POST" autocomplete="off">  {% csrf_token %}
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Tipo de servicio</label>
+      <select class="form-control" id="tipo" name="tipo">
+        <option value="Reparación">Reparación</option>
+        <option value="Instalación">Instalación</option>
+        <option value="Modernización">Modernización</option>
+        <option value="Montaje">Montaje</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Ingrese Comuna</label>
+      <input type="text" class="form-control" id="com" placeholder="Ej: providencia" name="com">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Dirección</label>
+      <input type="text" class="form-control" id="direc" placeholder="Dirección" name="direc">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleNumber">Fecha para el servicio</label>
+      <input type="date" class="form-control" id="fecha" placeholder="Ingrese Fecha" name="fecha">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleNumber">Teléfono de contacto</label>
+      <input type="number" class="form-control" id="fono" placeholder="Ingrese numero telefónico" name="fono">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email de contacto</label>
+      <input type="email" class="form-control" id="mail" placeholder="Ingrese email" name="mail">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea">Descripción del servicio</label>
+      <textarea class="form-control" id="des" rows="5" name="des"></textarea>
+    </div>
+
+     <div class="form-group">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+
+  
+  </form>
+       
+</div>
+
+{% endblock content %}
